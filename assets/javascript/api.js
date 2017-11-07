@@ -11,7 +11,7 @@ for (var i = 0; i < search_List.length; i++) {
 }
 
 
-$("button").on("click", function () {
+$(document).on("click", "button", function () {
 
     var search = "Studio Ghibli " + $(this).text();
     var apiKey = "68u77PTQxsgzgzvFmXriPw0LslrK4f5c";
@@ -51,7 +51,7 @@ $("button").on("click", function () {
            
             $(".gif").on("click", function () {
                 var thisButton = $(this);
-            
+                
                 if (thisButton.attr("status") === "still") {
                     thisButton.attr("status", "animate");
                     thisButton.attr("src", thisButton.data("animate"))
@@ -65,6 +65,14 @@ $("button").on("click", function () {
         })
 })
 
+$("#searchButton").on("click",function(e){
+    e.preventDefault();
+    var $search = $("#search");
+    var thisSearch = $search.val().trim();
+
+    appendButton(thisSearch);
+    search_List.push(thisSearch);
+})
 
 
 

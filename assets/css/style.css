@@ -1,1 +1,11 @@
+body{
+    box-sizing: border-box;
+    
+}
+.buttons{
+    margin: 10px;
+}
 
+.searching{
+    margin-top: 10px;
+}
